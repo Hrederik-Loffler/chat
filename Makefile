@@ -20,3 +20,16 @@ restart: down up
 init: ## Start shell php74 application container
 	$(docker_compose_bin) -f docker-compose.yml exec --user $(CURRENT_USER_ID) "laravel-react-fpm" composer install
 	$(docker_compose_bin) -f docker-compose.yml exec --user $(CURRENT_USER_ID) "laravel-react-fpm" php artisan migrate
+
+
+shell-php:
+	$(docker_compose_bin) -f docker-compose.yml exec --user $(CURRENT_USER_ID) "laravel-react-fpm" bash
+
+npm-install:
+	$(docker_compose_bin) -f docker-compose.yml run --rm --user="1000" "laravel-react-node" npm install
+
+npm-build:
+	$(docker_compose_bin) -f docker-compose.yml run --rm --user="1000" "laravel-react-node" npm run dev
+
+npm-watch:
+	$(docker_compose_bin) -f docker-compose.yml run --rm --user="1000" "laravel-react-node" npm run watch
