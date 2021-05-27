@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/test', function () {
+    header('Content-Type: application/json');
+    echo json_encode([
+        'test' => 'test_value'
+    ]);
+});
