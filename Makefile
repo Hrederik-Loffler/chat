@@ -36,3 +36,6 @@ npm-watch:
 
 node-shell:
 	$(docker_compose_bin) -f docker-compose.yml run --rm --user="1000" "laravel-react-node" bash
+
+node-shell-demon:
+	$(docker_compose_bin) -f docker-compose.yml run --rm -p 3000:3000 --user="1000" "laravel-react-node" bash
