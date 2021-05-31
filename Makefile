@@ -25,6 +25,9 @@ init: ## Start shell php74 application container
 shell-php:
 	$(docker_compose_bin) -f docker-compose.yml exec --user $(CURRENT_USER_ID) "laravel-react-fpm" bash
 
+shell-php-root:
+	$(docker_compose_bin) -f docker-compose.yml exec --user="root" "laravel-react-fpm" bash
+
 npm-install:
 	$(docker_compose_bin) -f docker-compose.yml run --rm --user="1000" "laravel-react-node" npm install
 
@@ -41,4 +44,4 @@ node-shell-demon:
 	$(docker_compose_bin) -f docker-compose.yml run --rm -p 3000:3000 --user="1000" "laravel-react-node" bash
 
 node-shell-root:
-	$(docker_compose_bin) -f docker-compose.yml run --rm --user="root" "laravel-react-node" bash
+	$(docker_compose_bin) -f docker-compose.yml run --rm --user="root" -p 6001:6001 "laravel-react-node" bash

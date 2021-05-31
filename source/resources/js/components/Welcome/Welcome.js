@@ -8,7 +8,7 @@ import './welcome.css'
 export default function Welcome() {
     const [login, setLogin] = useState("");
     const [email, setEmail] = useState("");
-    const [error, setError] = useState('')
+    const [error, setError] = useState("")
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -23,9 +23,9 @@ export default function Welcome() {
 
     async function signup(options) {
         try {
-            const signupResp = await axios.post("/api/register", options);
+            const signupResp = await axios.post("/register", options);
             // setCurrentUser({ email: options.email, name: options.name });
-            return signupResp.response;
+            return signupResp;
         } catch (e) {
             return e.response;
         }
@@ -34,22 +34,17 @@ export default function Welcome() {
     const handleRegisterSubmit = async (e) => {
         e.preventDefault()
         const res = await signup(options)
-        console.log(res)
 
-
-        if (res == undefined) {
+        if (res.status == 422) {
+            setError(res.data.errors)
+        } else {
             setError('')
             history.push("/join")
-        } else if (res.status !== 200) {
-            setError(res.data.errors)
         }
+
     }
 
     return (
-        <>
-        <div>
-            <h2>If you already login go to chat</h2>
-        </div>
         <div className="joinOuterContainer">
             <div className="joinInnerContainer">
                 <h1 className="heading">Welcome</h1>
@@ -108,6 +103,5 @@ export default function Welcome() {
                 </div>
             </div>
         </div>
-        </>
     );
 }

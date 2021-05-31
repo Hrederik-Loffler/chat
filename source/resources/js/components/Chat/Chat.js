@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import queryString from 'query-string'
-import {io} from 'socket.io-client';
+import Echo from "laravel-echo";
+// import {io} from 'socket.io-client';
 import axios from "axios";
 
 import InfoBar from "../InfoBar/InfoBar";
@@ -21,6 +22,24 @@ const Chat = () => {
             setRoom(room)
 
     },[])
+
+    useEffect(() => {
+        let channel = window.Echo
+
+        console.log(window.Echo)
+        // console.log(channel.channel('user-channel').listen('UserEvent', (data) => {}))
+
+
+
+
+
+        channel.channel('user-channel').listen('UserEvent', function (data) {
+            console.log('fsdfd')
+        })
+
+
+
+    }, [])
 
 
     // const [name, setName] = useState('')
@@ -77,7 +96,7 @@ const Chat = () => {
                 {/*<Messages messages={messages} name={name} />*/}
                 {/*<Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>*/}
                 <InfoBar room={room} />
-                {/*<Messages  />*/}
+                <Messages />
                 <Input />
             </div>
         </div>

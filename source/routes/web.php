@@ -1,7 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+//use Illuminate\Support\Facades\Redis;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,8 +23,21 @@ use Illuminate\Support\Facades\Route;
 //
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//$redis = Redis::connection();
+//dd($redis);
+
+
+Route::post('message', function (\Illuminate\Http\Request $request) {
+    \App\Events\Message::dispatch($request->input());
+});
+
+
+Auth::routes();
 // React will handle any route
 Route::get('/{query}', function () {
     return view('app');
 })->where('query', '^((?!api).)*$');
+
+
+
 

@@ -97,6 +97,8 @@ services:
 #    image: node:latest
     build:
      ./docker/node
+    networks:
+      - laravel-react
     working_dir: /var/www/html
     volumes:
       - ./source:/var/www/html:rw

@@ -19,9 +19,9 @@ const Login = () => {
 
     async function login(options) {
         try {
-            const loginResp = await axios.post("/api/login", options);
+            const loginResp = await axios.post("/login", options);
             // setCurrentUser({ email: options.email, name: options.name });
-            return loginResp.response;
+            return loginResp;
         } catch (e) {
             return e.response;
         }
@@ -31,12 +31,12 @@ const Login = () => {
         e.preventDefault()
         const res = await login(options)
 
-        if (res == undefined || res.status == 200 || res.status == 302) {
+
+        if (res.status == 422) {
+            setError(res.data.errors)
+        } else {
             setError('')
             history.push("/join")
-        } else if (res.status !== 200) {
-            console.log(res.status)
-            setError(res.data.message)
         }
 
     }
@@ -45,7 +45,7 @@ const Login = () => {
     return (
         <div className="joinOuterContainer">
             <div className="joinInnerContainer">
-            <h1 className="heading">Welcome</h1>
+            <h1 className="heading">Login</h1>
                 <form onSubmit={handleLoginSubmit}>
                     <div>
                         <input
