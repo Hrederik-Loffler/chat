@@ -39,3 +39,6 @@ node-shell:
 
 node-shell-demon:
 	$(docker_compose_bin) -f docker-compose.yml run --rm -p 3000:3000 --user="1000" "laravel-react-node" bash
+
+node-shell-root:
+	$(docker_compose_bin) -f docker-compose.yml run --rm --user="root" "laravel-react-node" bash

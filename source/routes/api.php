@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-Route::get('/test', function () {
-    header('Content-Type: application/json');
-    echo json_encode([
-        'test' => 'test_value'
-    ]);
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/join', [UserController::class, 'index']);
 });
+Auth::routes();
+

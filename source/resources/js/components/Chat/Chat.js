@@ -9,71 +9,76 @@ import Messages from "../Messages/Messages";
 
 import './chat.css'
 
-
-const Chat = ({ location }) => {
-
+// const Chat = ({ location }) =>
+const Chat = () => {
     const [name, setName] = useState('')
     const [room, setRoom] = useState('')
-    const [message, setMessage] = useState('')
-    const [messages, setMessages] = useState([])
-    const ENDPOINT = 'http://127.0.0.1:3000'
-    let socket = io(ENDPOINT)
 
     useEffect(() => {
-        const {name, room} = queryString.parse(location.search)
+            const {name, room} = queryString.parse(location.search)
 
-        setName(name)
-        setRoom(room)
+            setName(name)
+            setRoom(room)
 
-        socket.emit('join', { name, room }, () => {
-
-        })
-
-        return () => {
-            socket.emit('disconnect')
-
-            socket.off()
-        }
-        //[ENDPOINT, location.search]
-    }, [ENDPOINT, location.search])
-
-    useEffect(() => {
-        socket.on('message', ( message ) => {
-
-        })
-    })
-
-    socket.on('connection');
+    },[])
 
 
-    // const setMessage = (e) => {
-    //     console.log(e)
+    // const [name, setName] = useState('')
+    // const [room, setRoom] = useState('')
+    // const [message, setMessage] = useState('')
+    // const [messages, setMessages] = useState([])
+    // const ENDPOINT = 'http://127.0.0.1:3000'
+    // let socket = io(ENDPOINT)
+    //
+    // useEffect(() => {
+    //     const {name, room} = queryString.parse(location.search)
+    //
+    //     setName(name)
+    //     setRoom(room)
+    //
+    //     socket.emit('join', { name, room }, () => {
+    //     })
+    //
+    //     return () => {
+    //         socket.emit('disconnect')
+    //         socket.off()
+    //     }
+    //     //[ENDPOINT, location.search]
+    // }, [])
+    //
+    // useEffect(() => {
+    //     socket.on('message', ( message ) => {
+    //         setMessages([...messages, message])
+    //     })
+    //
+    //     // socket.on("roomData", ({ users }) => {
+    //     //     setUser(users);
+    //     // })
+    // }, [])
+    //
+    //
+    // socket.on('connection');
+    //
+    // //function for sending messages
+    // const sendMessage = (event) => {
+    //     event.preventDefault()
+    //
+    //     if (message) {
+    //         socket.emit('sendMessage', message, () => {
+    //             setMessage('')
+    //         })
+    //     }
     // }
-
-    const sendMessage = (event) => {
-        /*
-            event.preventDefault();
-
-            if(message) {
-                socket.emit('sendMessage', message, () => sendMesage(''))
-
-            }
-
-
-         */
-
-        console.log(message)
-    }
-
-    // value for input need to be variable message
-
-    // onChange={(event) => setMessage(event.tagret.value)}
+    // console.log(message, messages)
     return (
         <div className="outerContainer">
             <div className="container">
-                <InfoBar/>
-                <Messages />
-                <Input/>
+                {/*<InfoBar room={room}/>*/}
+                {/*<Messages messages={messages} name={name} />*/}
+                {/*<Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>*/}
+                <InfoBar room={room} />
+                {/*<Messages  />*/}
+                <Input />
             </div>
         </div>
     )
