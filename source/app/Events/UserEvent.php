@@ -15,16 +15,16 @@ class UserEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-//    public $user;
+    public $user;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(User $user)
     {
-//        $this->user = $user;
+        $this->user = $user;
     }
 
     /**

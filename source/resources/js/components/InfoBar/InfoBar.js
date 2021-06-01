@@ -19,7 +19,7 @@ const InfoBar = ({ room }) => {
 
     const handlerLogout = async (e) => {
         // e.preventDefault()
-        document.location.reload()
+        // document.location.reload()
 
         const res = await logout();
         // console.log(res)

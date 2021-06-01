@@ -18,7 +18,7 @@ class ChatsController extends Controller
     /**
      * Fetch all messages
      *
-     * @return \App\Message
+     * @return App\Models\Message
      */
     public function fetchMessages()
     {

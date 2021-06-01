@@ -19,25 +19,23 @@ use App\Http\Controllers\ChatsController;
 //Route::get('/', function () {
 //    return view('app');
 //});
-//
-//Auth::routes();
-//
+
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //$redis = Redis::connection();
 //dd($redis);
-
-
-Route::post('message', function (\Illuminate\Http\Request $request) {
-    \App\Events\Message::dispatch($request->input());
-});
-
-
-Route::get('messages', [ChatsController::class, 'fetchMessage']);
-Route::get('messages', [ChatsController::class, 'sendMessage']);
-
-
 Auth::routes();
+
+
+//Route::post('message', function (\Illuminate\Http\Request $request) {
+//    \App\Events\Message::dispatch($request->input());
+//});
+
+
+Route::get('/messages', [ChatsController::class, 'fetchMessages']);
+Route::post('/messages', [ChatsController::class, 'sendMessage']);
+
+
 // React will handle any route
 Route::get('/{query}', function () {
     return view('app');

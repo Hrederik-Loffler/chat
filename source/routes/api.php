@@ -19,8 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('/join', [UserController::class, 'index']);
-});
+//Route::group(['middleware' => 'auth'], function () {
+//    Route::get('/join', [UserController::class, 'index']);
+//});
 Auth::routes();
 

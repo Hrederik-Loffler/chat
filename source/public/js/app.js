@@ -3847,13 +3847,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _Welcome_Welcome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Welcome/Welcome */ "./resources/js/components/Welcome/Welcome.js");
 /* harmony import */ var _Login_Login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Login/Login */ "./resources/js/components/Login/Login.js");
 /* harmony import */ var _Join_Join__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Join/Join */ "./resources/js/components/Join/Join.js");
 /* harmony import */ var _Chat_Chat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Chat/Chat */ "./resources/js/components/Chat/Chat.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _provider_User__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../provider/User */ "./resources/js/provider/User.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
@@ -3864,23 +3867,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.BrowserRouter, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
-      path: "/",
-      exact: true,
-      component: _Welcome_Welcome__WEBPACK_IMPORTED_MODULE_1__.default
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
-      path: "/auth/login",
-      component: _Login_Login__WEBPACK_IMPORTED_MODULE_2__.default
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
-      path: "/join",
-      exact: true,
-      component: _Join_Join__WEBPACK_IMPORTED_MODULE_3__.default
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
-      path: "/chat",
-      component: _Chat_Chat__WEBPACK_IMPORTED_MODULE_4__.default
-    })]
-  });
+  // const { currentUser } = useUser();
+  return (
+    /*#__PURE__*/
+    // <User>
+    (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.BrowserRouter, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        path: "/",
+        exact: true,
+        component: _Welcome_Welcome__WEBPACK_IMPORTED_MODULE_1__.default
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        path: "/auth/login",
+        component: _Login_Login__WEBPACK_IMPORTED_MODULE_2__.default
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        path: "/join",
+        exact: true,
+        component: _Join_Join__WEBPACK_IMPORTED_MODULE_3__.default
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        path: "/chat",
+        component: _Chat_Chat__WEBPACK_IMPORTED_MODULE_4__.default
+      })]
+    }) // </User>
+
+  );
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -3901,15 +3910,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! query-string */ "./node_modules/query-string/index.js");
 /* harmony import */ var laravel_echo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! laravel-echo */ "./node_modules/laravel-echo/dist/echo.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _InfoBar_InfoBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../InfoBar/InfoBar */ "./resources/js/components/InfoBar/InfoBar.js");
-/* harmony import */ var _Input_Input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Input/Input */ "./resources/js/components/Input/Input.js");
-/* harmony import */ var _Messages_Messages__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Messages/Messages */ "./resources/js/components/Messages/Messages.js");
-/* harmony import */ var _chat_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./chat.css */ "./resources/js/components/Chat/chat.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _this = undefined;
-
+/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! socket.io-client */ "./node_modules/socket.io-client/lib/index.js");
+/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _InfoBar_InfoBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../InfoBar/InfoBar */ "./resources/js/components/InfoBar/InfoBar.js");
+/* harmony import */ var _Input_Input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Input/Input */ "./resources/js/components/Input/Input.js");
+/* harmony import */ var _Messages_Messages__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Messages/Messages */ "./resources/js/components/Messages/Messages.js");
+/* harmony import */ var _chat_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./chat.css */ "./resources/js/components/Chat/chat.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -3924,7 +3933,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
- // import {io} from 'socket.io-client';
+
 
 
 
@@ -3946,6 +3955,11 @@ var Chat = function Chat() {
       room = _useState4[0],
       setRoom = _useState4[1];
 
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      messages = _useState6[0],
+      setMessages = _useState6[1];
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var _queryString$parse = query_string__WEBPACK_IMPORTED_MODULE_1__.parse(location.search),
         name = _queryString$parse.name,
@@ -3954,73 +3968,24 @@ var Chat = function Chat() {
     setName(name);
     setRoom(room);
 
-    var componentDidMount = function componentDidMount() {
-      axios__WEBPACK_IMPORTED_MODULE_3___default().get('/messages').then(function (response) {
-        _this.setState({
-          messages: response.data
-        });
-      }).then(console.log(response));
+    var allMessages = function allMessages() {
+      var res = axios__WEBPACK_IMPORTED_MODULE_4___default().get('/messages').then(function (response) {
+        // console.log(response.data)
+        setMessages(response.data);
+      });
     };
-  }, []);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var channel = window.Echo; // channel.channel('user-channel').listen('UserEvent', function (data) {
-    //     console.log('fsdfd')
-    // })
-  }, []); // const [name, setName] = useState('')
-  // const [room, setRoom] = useState('')
-  // const [message, setMessage] = useState('')
-  // const [messages, setMessages] = useState([])
-  // const ENDPOINT = 'http://127.0.0.1:3000'
-  // let socket = io(ENDPOINT)
-  //
-  // useEffect(() => {
-  //     const {name, room} = queryString.parse(location.search)
-  //
-  //     setName(name)
-  //     setRoom(room)
-  //
-  //     socket.emit('join', { name, room }, () => {
-  //     })
-  //
-  //     return () => {
-  //         socket.emit('disconnect')
-  //         socket.off()
-  //     }
-  //     //[ENDPOINT, location.search]
-  // }, [])
-  //
-  // useEffect(() => {
-  //     socket.on('message', ( message ) => {
-  //         setMessages([...messages, message])
-  //     })
-  //
-  //     // socket.on("roomData", ({ users }) => {
-  //     //     setUser(users);
-  //     // })
-  // }, [])
-  //
-  //
-  // socket.on('connection');
-  //
-  // //function for sending messages
-  // const sendMessage = (event) => {
-  //     event.preventDefault()
-  //
-  //     if (message) {
-  //         socket.emit('sendMessage', message, () => {
-  //             setMessage('')
-  //         })
-  //     }
-  // }
-  // console.log(message, messages)
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+    allMessages();
+  }, [messages]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
     className: "outerContainer",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
       className: "container",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_InfoBar_InfoBar__WEBPACK_IMPORTED_MODULE_4__.default, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_InfoBar_InfoBar__WEBPACK_IMPORTED_MODULE_5__.default, {
         room: room
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Messages_Messages__WEBPACK_IMPORTED_MODULE_6__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Input_Input__WEBPACK_IMPORTED_MODULE_5__.default, {})]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Messages_Messages__WEBPACK_IMPORTED_MODULE_7__.default, {
+        messages: messages
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Input_Input__WEBPACK_IMPORTED_MODULE_6__.default, {})]
     })
   });
 };
@@ -4105,15 +4070,13 @@ var InfoBar = function InfoBar(_ref) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              // e.preventDefault()
-              document.location.reload();
-              _context.next = 3;
+              _context.next = 2;
               return logout();
 
-            case 3:
+            case 2:
               res = _context.sent;
 
-            case 4:
+            case 3:
             case "end":
               return _context.stop();
           }
@@ -4172,7 +4135,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _input_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./input.css */ "./resources/js/components/Input/input.css");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var laravel_echo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! laravel-echo */ "./node_modules/laravel-echo/dist/echo.js");
+/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! socket.io-client */ "./node_modules/socket.io-client/lib/index.js");
+/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -4193,7 +4159,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
- // const Input = ({ message, setMessage, sendMessage }) => (
+
+
+ // import {response} from "express";
+// const Input = ({ message, setMessage, sendMessage }) => (
 //     <form className="form">
 //         <input
 //             type="text"
@@ -4218,51 +4187,44 @@ var Input = function Input() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
       message = _useState2[0],
-      setMessage = _useState2[1]; // useEffect(() => {
-  //     window.Echo.channel('chat')
-  //         .listen('Message', (data) => {
-  //             console.log(data)
-  //         })
-  // }, [])
+      setMessage = _useState2[1]; //
 
 
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {}, []); // const socket = io(window.location.hostname + ':3000');
+  // socket.on('chat', function (message) {
+  //     console.log(JSON.parse(message))
+  // })
+
+  var echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_4__.default({
+    broadcaster: 'socket.io',
+    client: (socket_io_client__WEBPACK_IMPORTED_MODULE_5___default()),
+    host: window.location.hostname + ':6001'
+  });
+  echo.channel('chat').listen('MessageSent', function (e) {
+    console.log(e); // setMessages(messages.push(e))
+  });
   var options = {
     message: message
   };
 
-  function sendMessage(_x) {
-    return _sendMessage.apply(this, arguments);
-  }
+  var sendMessage = function sendMessage(options) {
+    var res = axios__WEBPACK_IMPORTED_MODULE_3___default().post('/messages', options).then(function (response) {// console.log(response.data)
+      // setMessages(response.data)
+    });
+  }; // async function sendMessage(options) {
+  //     // try {
+  //     //     const sendResp = await axios.post("/messages", options);
+  //     //     // setCurrentUser({ email: options.email, name: options.name });
+  //     //     return sendResp;
+  //     // } catch (e) {
+  //     //     return e.response;
+  //     // }
+  //
+  //     axios.post('/messages', message).then((response) => {
+  //         console.log(response)
+  //     })
+  // }
 
-  function _sendMessage() {
-    _sendMessage = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(options) {
-      var signupResp;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              _context2.prev = 0;
-              _context2.next = 3;
-              return axios__WEBPACK_IMPORTED_MODULE_3___default().post("/message", options);
-
-            case 3:
-              signupResp = _context2.sent;
-              return _context2.abrupt("return", messsageResp);
-
-            case 7:
-              _context2.prev = 7;
-              _context2.t0 = _context2["catch"](0);
-              return _context2.abrupt("return", _context2.t0.response);
-
-            case 10:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2, null, [[0, 7]]);
-    }));
-    return _sendMessage.apply(this, arguments);
-  }
 
   var handleMessageSubmit = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(e) {
@@ -4286,23 +4248,31 @@ var Input = function Input() {
       }, _callee);
     }));
 
-    return function handleMessageSubmit(_x2) {
+    return function handleMessageSubmit(_x) {
       return _ref.apply(this, arguments);
     };
   }();
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
+  var handleKeyPress = function handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleMessageSubmit();
+    }
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
     className: "form",
     onSubmit: handleMessageSubmit,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
       name: "message",
       type: "text",
       className: "input",
       placeholder: "Type a message",
       onChange: function onChange(event) {
         return setMessage(event.target.value);
-      }
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+      },
+      onKeyPress: handleKeyPress
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
       className: "sendButton",
       type: "submit",
       children: "Send"
@@ -4628,34 +4598,41 @@ __webpack_require__.r(__webpack_exports__);
 
  //I need to have here props " one <message>" and "name"
 //from Messages component where i try to map all messages to one message
+// const Message = ({ message: { user, text }, name }) => {
+//     let isSentByCurrentUser = false;
+//     /* i need a lowerCase name for backend */
+//     const trimmedName = name.trim().toLowerCase()
+//     //where i need put message
+//     if (user === trimmedName) {
+//         isSentByCurrentUser = true
+//     }
 
 
 
 
 var Message = function Message(_ref) {
-  var _ref$message = _ref.message,
-      user = _ref$message.user,
-      text = _ref$message.text,
-      name = _ref.name;
+  var message = _ref.message;
   var isSentByCurrentUser = false;
   /* i need a lowerCase name for backend */
 
   var trimmedName = name.trim().toLowerCase(); //where i need put message
-
-  if (user === trimmedName) {
-    isSentByCurrentUser = true;
-  }
+  // if (user === trimmedName) {
+  //     isSentByCurrentUser = true
+  // }
+  // useEffect(() => {
+  //     console.log(message)
+  // }, [])
 
   return isSentByCurrentUser ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "messageContainer justifyEnd",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
       className: "sentText pr-10",
-      children: trimmedName
+      children: message.user.name
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       classNames: "messageBox backgroundBlue",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
         className: "messageText",
-        children: text
+        children: message.message
       })
     })]
   }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -4664,13 +4641,16 @@ var Message = function Message(_ref) {
       className: "messageBox backgroundLight",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
         className: "messageText colorDark",
-        children: text
+        children: message.message
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
       className: "sentText pl-10",
-      children: user
+      children: message.user.name
     })]
-  });
+  }) // <div>
+  //
+  // </div>
+  ;
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Message);
@@ -4700,10 +4680,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Messages = function Messages() {
+var Messages = function Messages(_ref) {
+  var messages = _ref.messages;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_scroll_to_bottom__WEBPACK_IMPORTED_MODULE_1__.default, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      children: "Messages here"
+    className: "box",
+    children: messages.map(function (message, i) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Message_Message__WEBPACK_IMPORTED_MODULE_2__.default, {
+          message: message
+        })
+      }, i);
     })
   });
 };
@@ -4960,6 +4946,153 @@ __webpack_require__.r(__webpack_exports__);
 
 if (document.getElementById('root')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_App__WEBPACK_IMPORTED_MODULE_2__.default, {}), document.getElementById('root'));
+}
+
+/***/ }),
+
+/***/ "./resources/js/provider/User.js":
+/*!***************************************!*\
+  !*** ./resources/js/provider/User.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useUser": () => (/* binding */ useUser),
+/* harmony export */   "default": () => (/* binding */ User)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var UserContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createContext();
+function useUser() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(UserContext);
+}
+function User(props) {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState2 = _slicedToArray(_useState, 2),
+      currentUser = _useState2[0],
+      setCurrentUser = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
+      _useState4 = _slicedToArray(_useState3, 2),
+      loading = _useState4[0],
+      setLoading = _useState4[1];
+
+  function signup(_x) {
+    return _signup.apply(this, arguments);
+  }
+
+  function _signup() {
+    _signup = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(options) {
+      var signupResp;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.prev = 0;
+              _context2.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_2___default().post("/api/register", options);
+
+            case 3:
+              signupResp = _context2.sent;
+              setCurrentUser({
+                name: options.name,
+                room: options.room
+              });
+              window.location.reload();
+              return _context2.abrupt("return", signupResp);
+
+            case 9:
+              _context2.prev = 9;
+              _context2.t0 = _context2["catch"](0);
+              return _context2.abrupt("return", _context2.t0.response);
+
+            case 12:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[0, 9]]);
+    }));
+    return _signup.apply(this, arguments);
+  }
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    function fetch() {
+      return _fetch.apply(this, arguments);
+    }
+
+    function _fetch() {
+      _fetch = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        var user;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/profile");
+
+              case 3:
+                user = _context.sent;
+                console.log(user);
+                setCurrentUser(user.data);
+                _context.next = 10;
+                break;
+
+              case 8:
+                _context.prev = 8;
+                _context.t0 = _context["catch"](0);
+
+              case 10:
+                setLoading(false);
+
+              case 11:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[0, 8]]);
+      }));
+      return _fetch.apply(this, arguments);
+    }
+
+    fetch();
+  }, []);
+  var value = {
+    currentUser: currentUser,
+    signup: signup
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(UserContext.Provider, {
+    value: value,
+    children: !loading && props.children
+  });
 }
 
 /***/ }),
@@ -18288,7 +18421,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".form {\n    display: flex;\n    border-top: 2px solid #D3D3D3;\n}\n\n.input {\n    border: none;\n    border-radius: 0;\n    padding: 3%;\n    width: 80%;\n    font-size: 1.2em;\n}\n\ninput:focus, textarea:focus, select:focus{\n    outline: none;\n}\n\n.sendButton {\n    color: #fff !important;\n    text-transform: uppercase;\n    text-decoration: none;\n    background: #2979FF;\n    padding: 15px;\n    display: inline-block;\n    border: none;\n    width: 20%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".form {\n    display: flex;\n    border-top: 2px solid #D3D3D3;\n}\n\n.input {\n    border: none;\n    border-radius: 0;\n    padding: 3%;\n    width: 80%;\n    font-size: 1.2em;\n}\n\ninput:focus, textarea:focus, select:focus{\n    outline: none;\n}\n\n.sendButton {\n    color: #fff !important;\n    text-transform: uppercase;\n    text-decoration: none;\n    background: #2979FF;\n    padding: 15px;\n    display: inline-block;\n    border: none;\n    width: 20%;\n}\n\n.box {\n    height: 50%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

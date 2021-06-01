@@ -4,7 +4,7 @@ import axios from "axios";
 const UserContext = React.createContext();
 
 export function useUser() {
-    return useContext();
+    return useContext(UserContext);
 }
 
 export default function User(props) {
@@ -22,6 +22,21 @@ export default function User(props) {
         }
     }
 
+    useEffect(() => {
+        async function fetch() {
+            try {
+                const user = await axios.get("/profile");
+                console.log(user);
+                setCurrentUser(user.data);
+            } catch (e) {
+                // Leave it empty
+            }
+
+            setLoading(false);
+        }
+
+        fetch();
+    }, []);
 
     const value = {
         currentUser,

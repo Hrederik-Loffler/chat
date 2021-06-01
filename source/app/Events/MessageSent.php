@@ -51,4 +51,11 @@ class MessageSent
     {
         return new Channel('chat');
     }
+
+    public function broadcastWith()
+    {
+        return [
+            'key' => 'value'
+        ];
+    }
 }
