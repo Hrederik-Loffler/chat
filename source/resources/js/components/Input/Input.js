@@ -25,14 +25,12 @@ const Input = () => {
     const [message, setMessage] = useState('')
 
 
-    useEffect(() => {
-
-        console.log(window.Echo.channel('chat'))
-        window.Echo.channel('chat')
-            .listen('Message', (data) => {
-                console.log(data)
-            })
-    }, [])
+    // useEffect(() => {
+    //     window.Echo.channel('chat')
+    //         .listen('Message', (data) => {
+    //             console.log(data)
+    //         })
+    // }, [])
 
     const options = {
         message
@@ -51,16 +49,11 @@ const Input = () => {
 
     const handleMessageSubmit = async (e) => {
         e.preventDefault()
-
         const res = await sendMessage(options)
-
-        console.log(res)
-
 
     }
 
     return (
-
         <form className="form" onSubmit={handleMessageSubmit}>
             <input
                 name="message"

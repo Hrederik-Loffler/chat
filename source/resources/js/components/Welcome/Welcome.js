@@ -39,7 +39,7 @@ export default function Welcome() {
             setError(res.data.errors)
         } else {
             setError('')
-            history.push("/join")
+            history.push("/chat")
         }
 
     }

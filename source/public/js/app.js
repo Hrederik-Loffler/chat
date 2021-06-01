@@ -3908,6 +3908,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Messages_Messages__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Messages/Messages */ "./resources/js/components/Messages/Messages.js");
 /* harmony import */ var _chat_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./chat.css */ "./resources/js/components/Chat/chat.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _this = undefined;
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -3951,14 +3953,19 @@ var Chat = function Chat() {
 
     setName(name);
     setRoom(room);
+
+    var componentDidMount = function componentDidMount() {
+      axios__WEBPACK_IMPORTED_MODULE_3___default().get('/messages').then(function (response) {
+        _this.setState({
+          messages: response.data
+        });
+      }).then(console.log(response));
+    };
   }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var channel = window.Echo;
-    console.log(window.Echo); // console.log(channel.channel('user-channel').listen('UserEvent', (data) => {}))
-
-    channel.channel('user-channel').listen('UserEvent', function (data) {
-      console.log('fsdfd');
-    });
+    var channel = window.Echo; // channel.channel('user-channel').listen('UserEvent', function (data) {
+    //     console.log('fsdfd')
+    // })
   }, []); // const [name, setName] = useState('')
   // const [room, setRoom] = useState('')
   // const [message, setMessage] = useState('')
@@ -4033,11 +4040,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _icons_onlineIcon_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../icons/onlineIcon.png */ "./resources/icons/onlineIcon.png");
-/* harmony import */ var _icons_closeIcon_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../icons/closeIcon.png */ "./resources/icons/closeIcon.png");
-/* harmony import */ var _infobar_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./infobar.css */ "./resources/js/components/InfoBar/infobar.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _icons_onlineIcon_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../icons/onlineIcon.png */ "./resources/icons/onlineIcon.png");
+/* harmony import */ var _icons_closeIcon_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../icons/closeIcon.png */ "./resources/icons/closeIcon.png");
+/* harmony import */ var _infobar_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./infobar.css */ "./resources/js/components/InfoBar/infobar.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -4048,24 +4063,88 @@ __webpack_require__.r(__webpack_exports__);
 
 var InfoBar = function InfoBar(_ref) {
   var room = _ref.room;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+
+  function logout() {
+    return _logout.apply(this, arguments);
+  }
+
+  function _logout() {
+    _logout = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+      var res;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.prev = 0;
+              _context2.next = 3;
+              return axios.post("/logout");
+
+            case 3:
+              res = _context2.sent;
+              _context2.next = 8;
+              break;
+
+            case 6:
+              _context2.prev = 6;
+              _context2.t0 = _context2["catch"](0);
+
+            case 8:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[0, 6]]);
+    }));
+    return _logout.apply(this, arguments);
+  }
+
+  var handlerLogout = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(e) {
+      var res;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              // e.preventDefault()
+              document.location.reload();
+              _context.next = 3;
+              return logout();
+
+            case 3:
+              res = _context.sent;
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function handlerLogout(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "infoBar",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "leftInnerContainer",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
         className: "onlineIcon",
-        src: _icons_onlineIcon_png__WEBPACK_IMPORTED_MODULE_1__.default,
+        src: _icons_onlineIcon_png__WEBPACK_IMPORTED_MODULE_2__.default,
         alt: "online image"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h3", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h3", {
         children: ["room ", room]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "rightInnerContainer",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
         href: "/",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-          src: _icons_closeIcon_png__WEBPACK_IMPORTED_MODULE_2__.default,
-          alt: "close image"
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+          src: _icons_closeIcon_png__WEBPACK_IMPORTED_MODULE_3__.default,
+          alt: "close image",
+          onClick: handlerLogout
         })
       })
     })]
@@ -4139,14 +4218,14 @@ var Input = function Input() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
       message = _useState2[0],
-      setMessage = _useState2[1];
+      setMessage = _useState2[1]; // useEffect(() => {
+  //     window.Echo.channel('chat')
+  //         .listen('Message', (data) => {
+  //             console.log(data)
+  //         })
+  // }, [])
 
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    console.log(window.Echo.channel('chat'));
-    window.Echo.channel('chat').listen('Message', function (data) {
-      console.log(data);
-    });
-  }, []);
+
   var options = {
     message: message
   };
@@ -4198,9 +4277,8 @@ var Input = function Input() {
 
             case 3:
               res = _context.sent;
-              console.log(res);
 
-            case 5:
+            case 4:
             case "end":
               return _context.stop();
           }
@@ -4371,6 +4449,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var Login = function Login() {
+  var _error$email, _error$password;
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
       email = _useState2[0],
@@ -4440,14 +4520,18 @@ var Login = function Login() {
             case 3:
               res = _context.sent;
 
-              if (res.status == 422) {
+              if (res.data.message == 'CSRF token mismatch.') {
+                document.location.reload();
+              }
+
+              if (res.status == 422 || res.status === 419) {
                 setError(res.data.errors);
               } else {
                 setError('');
-                history.push("/join");
+                history.push("/chat");
               }
 
-            case 5:
+            case 6:
             case "end":
               return _context.stop();
           }
@@ -4479,7 +4563,12 @@ var Login = function Login() {
               return setEmail(event.target.value);
             }
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        }), ((_error$email = error.email) === null || _error$email === void 0 ? void 0 : _error$email.length) > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "alert alert-danger mt-2",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            children: error.email[0]
+          })
+        }) : '', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
             name: "password",
             placeholder: "Password",
@@ -4489,7 +4578,12 @@ var Login = function Login() {
               return setPassword(event.target.value);
             }
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        }), ((_error$password = error.password) === null || _error$password === void 0 ? void 0 : _error$password.length) > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "alert alert-danger mt-2",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            children: error.password[0]
+          })
+        }) : '', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
             className: "button mt-20",
             type: "submit",
@@ -4505,12 +4599,7 @@ var Login = function Login() {
             children: "Register here"
           }), "."]
         })
-      }), error ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "alert alert-danger mt-2",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-          children: error
-        })
-      }) : '']
+      })]
     })
   });
 };
@@ -4754,7 +4843,7 @@ function Welcome() {
                 setError(res.data.errors);
               } else {
                 setError('');
-                history.push("/join");
+                history.push("/chat");
               }
 
             case 5:

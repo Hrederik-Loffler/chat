@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ChatsController;
 
 //use Illuminate\Support\Facades\Redis;
 /*
@@ -30,6 +31,10 @@ use Illuminate\Support\Facades\Route;
 Route::post('message', function (\Illuminate\Http\Request $request) {
     \App\Events\Message::dispatch($request->input());
 });
+
+
+Route::get('messages', [ChatsController::class, 'fetchMessage']);
+Route::get('messages', [ChatsController::class, 'sendMessage']);
 
 
 Auth::routes();

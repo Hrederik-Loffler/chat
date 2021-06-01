@@ -45,3 +45,7 @@ node-shell-demon:
 
 node-shell-root:
 	$(docker_compose_bin) -f docker-compose.yml run --rm --user="root" -p 6001:6001 "laravel-react-node" bash
+
+laravel-server:
+	$(docker_compose_bin) -f docker-compose.yml run --rm -p 6001:6001 "laravel-react-node" ./node_modules/laravel-echo-server/bin/server.js start
+

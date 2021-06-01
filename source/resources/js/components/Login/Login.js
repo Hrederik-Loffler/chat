@@ -31,16 +31,17 @@ const Login = () => {
         e.preventDefault()
         const res = await login(options)
 
-
-        if (res.status == 422) {
+        if (res.data.message == 'CSRF token mismatch.') {
+            document.location.reload()
+        }
+        if (res.status == 422 || res.status === 419) {
             setError(res.data.errors)
         } else {
             setError('')
-            history.push("/join")
+            history.push("/chat")
         }
 
     }
-
 
     return (
         <div className="joinOuterContainer">
@@ -56,6 +57,7 @@ const Login = () => {
                             onChange={(event) => setEmail(event.target.value)}
                         />
                     </div>
+                    {error.email?.length > 0 ? (<div className="alert alert-danger mt-2"><p>{error.email[0]}</p></div>) : '' }
                     <div>
                         <input
                             name="password"
@@ -65,6 +67,7 @@ const Login = () => {
                             onChange={(event) => setPassword(event.target.value)}
                         />
                     </div>
+                    {error.password?.length > 0 ? (<div className="alert alert-danger mt-2"><p>{error.password[0]}</p></div>) : '' }
                     <div >
                         <button className="button mt-20" type="submit">
                             Login
@@ -77,7 +80,7 @@ const Login = () => {
                         <Link to="/">Register here</Link>.
                     </p>
                 </div>
-                {error ? (<div className="alert alert-danger mt-2"><p>{error}</p></div>) : '' }
+                {/*{error ? (<div className="alert alert-danger mt-2"><p>{error}</p></div>) : '' }*/}
             </div>
         </div>
     )

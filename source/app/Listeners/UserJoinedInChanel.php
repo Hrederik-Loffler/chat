@@ -26,6 +26,6 @@ class UserJoinedInChanel
      */
     public function handle(UserEvent $event)
     {
-        dd('gdfgfdg');
+        dd($event);
     }
 }

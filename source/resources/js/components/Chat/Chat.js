@@ -21,25 +21,26 @@ const Chat = () => {
             setName(name)
             setRoom(room)
 
+        const componentDidMount = () => {
+            axios.get('/messages').then(response => {
+                this.setState({
+                    messages: response.data
+                });
+            }).then(console.log(response));
+        }
+
     },[])
 
     useEffect(() => {
         let channel = window.Echo
 
-        console.log(window.Echo)
-        // console.log(channel.channel('user-channel').listen('UserEvent', (data) => {}))
-
-
-
-
-
-        channel.channel('user-channel').listen('UserEvent', function (data) {
-            console.log('fsdfd')
-        })
-
-
+        // channel.channel('user-channel').listen('UserEvent', function (data) {
+        //     console.log('fsdfd')
+        // })
 
     }, [])
+
+
 
 
     // const [name, setName] = useState('')

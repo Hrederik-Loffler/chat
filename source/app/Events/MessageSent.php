@@ -2,6 +2,9 @@
 
 namespace App\Events;
 
+
+use App\Models\User;
+use App\Models\Message;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -10,10 +13,22 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class Message
+class MessageSent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    /**
+     * User that sent the message
+     *
+     * @var \App\User
+     */
+    public $user;
+
+    /**
+     * Message details
+     *
+     * @var \App\Message
+     */
     public $message;
 
     /**
@@ -21,8 +36,9 @@ class Message
      *
      * @return void
      */
-    public function __construct($message)
+    public function __construct(User $user, Message $message)
     {
+        $this->user = $user;
         $this->message = $message;
     }
 
