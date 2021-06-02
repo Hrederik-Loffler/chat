@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 
 import classNames from "classnames/bind";
 
+
+import Login from '../Login/Login'
+
 import './message.css'
 
 //I need to have here props " one <message>" and "name"
@@ -15,17 +18,17 @@ import './message.css'
 //     if (user === trimmedName) {
 //         isSentByCurrentUser = true
 //     }
-const Message = ({message}) => {
+const Message = ({ message }) => {
     let isSentByCurrentUser = false;
     /* i need a lowerCase name for backend */
-    const trimmedName = name.trim().toLowerCase()
+    // const trimmedName = name.trim().toLowerCase()
     //where i need put message
-    // if (user === trimmedName) {
+    // if (currentUser.email == message.user.email) {
     //     isSentByCurrentUser = true
     // }
 
     // useEffect(() => {
-    //     console.log(message)
+    //     console.log(message.user.email)
     // }, [])
 
     return (
@@ -44,12 +47,10 @@ const Message = ({message}) => {
                     <div className="messageBox backgroundLight">
                         <p className="messageText colorDark">{message.message}</p>
                     </div>
+                    {/*<p className="sentText pl-10">{message.user.name}</p>*/}
                     <p className="sentText pl-10">{message.user.name}</p>
                 </div>
             )
-        // <div>
-        //
-        // </div>
     )
 }
 

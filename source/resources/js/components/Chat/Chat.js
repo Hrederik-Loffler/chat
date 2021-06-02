@@ -11,29 +11,25 @@ import Messages from "../Messages/Messages";
 import './chat.css'
 
 // const Chat = ({ location }) =>
-const Chat = () => {
-    const [name, setName] = useState('')
-    const [room, setRoom] = useState('')
+const Chat = ({ location }) => {
+    // const [name, setName] = useState('')
+    // const [room, setRoom] = useState('')
     const [messages, setMessages] = useState([])
 
+    const allMessages = () => {
+        let res = axios.get('/messages').then((response) => {
+            // console.log(response)
+            setMessages(response.data)
+        })
+    }
+
     useEffect(() => {
-        const {name, room} = queryString.parse(location.search)
+        // const {name, room} = queryString.parse(location.search)
+        // setName(name)
+        // setRoom(room)
 
-        setName(name)
-        setRoom(room)
-
-        const allMessages = () => {
-            let res = axios.get('/messages').then((response) => {
-                // console.log(response.data)
-               setMessages(response.data)
-            })
-        }
         allMessages()
-
-    },[messages])
-
-
-
+    },[])
 
 
     return (
@@ -42,9 +38,10 @@ const Chat = () => {
                 {/*<InfoBar room={room}/>*/}
                 {/*<Messages messages={messages} name={name} />*/}
                 {/*<Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>*/}
-                <InfoBar room={room} />
-                <Messages messages={messages} />
-                <Input />
+                {/*room={room}                */}
+                <InfoBar  />
+                <Messages messages={messages}  />
+                <Input messages={messages} setMessages={setMessages} />
             </div>
         </div>
     )

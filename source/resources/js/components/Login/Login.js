@@ -5,10 +5,13 @@ import axios from "axios"
 import { Link } from "react-router-dom";
 import './login.css'
 
+
+
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
+    const [currentUser, setCurrentUser] = useState({})
 
     const history = useHistory()
 
@@ -20,7 +23,7 @@ const Login = () => {
     async function login(options) {
         try {
             const loginResp = await axios.post("/login", options);
-            // setCurrentUser({ email: options.email, name: options.name });
+            setCurrentUser({ email: options.email, name: options.name } );
             return loginResp;
         } catch (e) {
             return e.response;
@@ -30,6 +33,8 @@ const Login = () => {
     const handleLoginSubmit = async (e) => {
         e.preventDefault()
         const res = await login(options)
+
+
 
         if (res.data.message == 'CSRF token mismatch.') {
             document.location.reload()

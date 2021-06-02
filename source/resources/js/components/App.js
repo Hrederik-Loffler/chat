@@ -5,6 +5,7 @@ import Welcome from './Welcome/Welcome'
 import Login from './Login/Login'
 import Join from './Join/Join'
 import Chat from './Chat/Chat'
+import NotFound from './NotFound/NotFound'
 import User from '../provider/User'
 import { useUser } from "../provider/User";
 
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/auth/login" component={Login} />
                 <Route path="/join" exact component={Join} />
                 <Route path="/chat" component={Chat} />
+                <Route component={NotFound} />
             </Router>
         // </User>
     );

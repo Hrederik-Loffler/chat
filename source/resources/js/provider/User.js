@@ -9,7 +9,7 @@ export function useUser() {
 
 export default function User(props) {
     const [currentUser, setCurrentUser] = useState()
-    const [loading, setLoading] = useState(true)
+    // const [loading, setLoading] = useState(true)
 
     async function signup(options) {
         try {
@@ -22,21 +22,21 @@ export default function User(props) {
         }
     }
 
-    useEffect(() => {
-        async function fetch() {
-            try {
-                const user = await axios.get("/profile");
-                console.log(user);
-                setCurrentUser(user.data);
-            } catch (e) {
-                // Leave it empty
-            }
-
-            setLoading(false);
-        }
-
-        fetch();
-    }, []);
+    // useEffect(() => {
+    //     async function fetch() {
+    //         try {
+    //             const user = await axios.get("/profile");
+    //             console.log(user);
+    //             setCurrentUser(user.data);
+    //         } catch (e) {
+    //             // Leave it empty
+    //         }
+    //
+    //         setLoading(false);
+    //     }
+    //
+    //     fetch();
+    // }, []);
 
     const value = {
         currentUser,

@@ -11,6 +11,7 @@ export default function Welcome() {
     const [error, setError] = useState("")
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [currentUser, setCurrentUser] = useState({})
 
     const history = useHistory()
 
@@ -24,7 +25,7 @@ export default function Welcome() {
     async function signup(options) {
         try {
             const signupResp = await axios.post("/register", options);
-            // setCurrentUser({ email: options.email, name: options.name });
+            setCurrentUser({ id: options.id, name: options.name });
             return signupResp;
         } catch (e) {
             return e.response;

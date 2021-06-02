@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatsController;
 
 //use Illuminate\Support\Facades\Redis;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +24,8 @@ use App\Http\Controllers\ChatsController;
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //$redis = Redis::connection();
-//dd($redis);
+//dd($redis->get(''));
+
 Auth::routes();
 
 

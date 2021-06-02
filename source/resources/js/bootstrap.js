@@ -1,3 +1,5 @@
+import Socketio from "socket.io-client";
+
 window._ = require('lodash');
 
 /**
@@ -45,11 +47,22 @@ import Echo from "laravel-echo";
 // window.io = require('socket.io-client')
 const client = window.io = require('socket.io-client')
 
-window.Echo = new Echo({
-    broadcaster: 'socket.io',
-    // host: process.env.MIX_APP_URL + ':6001'
-    host: window.location.hostname + ':6001',
-    // host: 'http://localhost:6001',
-    transports: ['websocket']
-})
+// window.Echo = new Echo({
+//     broadcaster: 'socket.io',
+//     // host: process.env.MIX_APP_URL + ':6001'
+//     host: window.location.hostname + ':6001',
+//     // host: 'http://localhost:6001',
+//     transports: ['websocket']
+// })
 
+let echo = new Echo({
+    broadcaster: 'socket.io',
+    client: Socketio,
+    host: window.location.hostname + ':6001'
+});
+
+
+echo.channel('chat').listen('MessageSent', (e) => {
+    console.log(e)
+    // setMessages(messages.push(e))
+})

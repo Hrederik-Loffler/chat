@@ -4,90 +4,30 @@ import './input.css'
 import axios from "axios";
 import Echo from "laravel-echo";
 import Socketio from "socket.io-client";
-// import {response} from "express";
 
-// const Input = ({ message, setMessage, sendMessage }) => (
-//     <form className="form">
-//         <input
-//             type="text"
-//             className="input"
-//             placeholder="Type a message"
-//             value={message}
-//             onChange={( event ) => setMessage(event.target.value)}
-//             onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
-//         />
-//         <button
-//             className="sendButton"
-//             onClick={(event) => sendMessage(event)}
-//         >Send
-//         </button>
-//     </form>
-// )
-const Input = () => {
+
+// const Input = ({ message, setMessage, sendMessage }) =>
+const Input = ({ messages, setMessages }) => {
 
     const [message, setMessage] = useState('')
-    //
-    useEffect(() => {
-
-    }, [])
-
-    // const socket = io(window.location.hostname + ':3000');
-    // socket.on('chat', function (message) {
-    //     console.log(JSON.parse(message))
-    // })
-
-
-    let echo = new Echo({
-        broadcaster: 'socket.io',
-        client: Socketio,
-        host: window.location.hostname + ':6001'
-    });
-
-
-    echo.channel('chat').listen('MessageSent', (e) => {
-        console.log(e)
-        // setMessages(messages.push(e))
-    })
 
     const options = {
         message
     }
 
-
     const sendMessage = (options) => {
         let res = axios.post('/messages', options).then((response) => {
-            // console.log(response.data)
-            // setMessages(response.data)
+            // messages.push(message)
+            // setMessages(messages)
         })
     }
-
-
-
-    // async function sendMessage(options) {
-    //     // try {
-    //     //     const sendResp = await axios.post("/messages", options);
-    //     //     // setCurrentUser({ email: options.email, name: options.name });
-    //     //     return sendResp;
-    //     // } catch (e) {
-    //     //     return e.response;
-    //     // }
-    //
-    //     axios.post('/messages', message).then((response) => {
-    //         console.log(response)
-    //     })
-    // }
-
 
     const handleMessageSubmit = async (e) => {
         e.preventDefault()
         const res = await sendMessage(options)
-    }
-
-    const handleKeyPress = (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            handleMessageSubmit()
-        }
+        messages.push(message)
+        setMessages(messages)
+        setMessage('')
     }
 
     return (
@@ -97,8 +37,9 @@ const Input = () => {
                 type="text"
                 className="input"
                 placeholder="Type a message"
+                value={message}
                 onChange={(event) => setMessage(event.target.value)}
-                onKeyPress={handleKeyPress}
+
             />
             <button
                 className="sendButton"
